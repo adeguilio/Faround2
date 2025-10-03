@@ -1,165 +1,147 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
-    span.s2 {font: 12.0px 'Apple Color Emoji'; font-kerning: none}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RSVP — Drinks at Štefanova 1</title>
+  <style>
+    :root{
+      --bg:#140028; --card:#1f0b3a; --accent:#ff7a18; --accent2:#ffd21f; --text:#fff;
+    }
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #2b0b63, transparent),
+                  radial-gradient(1000px 500px at 100% 10%, #3a0e7a, transparent),
+                  var(--bg); color:var(--text);
+    }
+    .wrap{max-width:760px; margin:32px auto; padding:16px;}
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,.06),transparent) , var(--card);
+      border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:18px;
+      box-shadow:0 20px 60px rgba(0,0,0,.35);
+    }
+    .invite-img{width:100%; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,.4);}
+    h1{font-size:clamp(26px,3.2vw,34px); margin:18px 0 6px}
+    p.lead{opacity:.9; margin-top:0}
+    form{margin-top:14px}
+    .grid{display:grid; gap:12px; grid-template-columns:1fr 1fr}
+    .grid .full{grid-column:1 / -1}
+    label{font-size:14px; opacity:.95}
+    input, textarea{
+      width:100%; padding:12px 14px; background:#120726; color:var(--text);
+      border:1px solid rgba(255,255,255,.18); border-radius:10px; outline:none;
+    }
+    textarea{min-height:90px; resize:vertical}
+    .buttons{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .btn{
+      appearance:none; border:none; cursor:pointer; padding:12px 18px; border-radius:10px;
+      color:#120726; background:linear-gradient(135deg,var(--accent),var(--accent2));
+      font-weight:700; box-shadow:0 8px 20px rgba(0,0,0,.35); transition:transform .06s ease;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.out{background:linear-gradient(135deg,#ff477e,#ff9f9f)}
+    .note{font-size:12px; opacity:.8; margin-top:8px}
+    .success, .error{
+      display:none; margin-top:14px; padding:12px 14px; border-radius:10px; font-weight:600
+    }
+    .success{background:#103b22; border:1px solid #2fd27d}
+    .error{background:#3b1010; border:1px solid #ff6b6b}
+    /* honeypot hide */
+    .hp{position:absolute; left:-5000px}
   </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;RSVP — Drinks at Štefanova 1&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>:root{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>--bg:#140028; --card:#1f0b3a; --accent:#ff7a18; --accent2:#ffd21f; --text:#fff;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>body{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background: radial-gradient(1200px 600px at 10% -10%, #2b0b63, transparent),</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>radial-gradient(1000px 500px at 100% 10%, #3a0e7a, transparent),</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>var(--bg); color:var(--text);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.wrap{max-width:760px; margin:32px auto; padding:16px;}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.card{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background:linear-gradient(180deg,rgba(255,255,255,.06),transparent) , var(--card);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:18px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>box-shadow:0 20px 60px rgba(0,0,0,.35);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.invite-img{width:100%; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,.4);}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>h1{font-size:clamp(26px,3.2vw,34px); margin:18px 0 6px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>p.lead{opacity:.9; margin-top:0}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>form{margin-top:14px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.grid{display:grid; gap:12px; grid-template-columns:1fr 1fr}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.grid .full{grid-column:1 / -1}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>label{font-size:14px; opacity:.95}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>input, textarea{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>width:100%; padding:12px 14px; background:#120726; color:var(--text);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border:1px solid rgba(255,255,255,.18); border-radius:10px; outline:none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>textarea{min-height:90px; resize:vertical}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.buttons{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.btn{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>appearance:none; border:none; cursor:pointer; padding:12px 18px; border-radius:10px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color:#120726; background:linear-gradient(135deg,var(--accent),var(--accent2));</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-weight:700; box-shadow:0 8px 20px rgba(0,0,0,.35); transition:transform .06s ease;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.btn:hover{transform:translateY(-1px)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.btn.out{background:linear-gradient(135deg,#ff477e,#ff9f9f)}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.note{font-size:12px; opacity:.8; margin-top:8px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.success, .error{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display:none; margin-top:14px; padding:12px 14px; border-radius:10px; font-weight:600</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.success{background:#103b22; border:1px solid #2fd27d}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.error{background:#3b1010; border:1px solid #ff6b6b}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* honeypot hide */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.hp{position:absolute; left:-5000px}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="wrap"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="card"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!-- Your invitation image --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;img class="invite-img" src="invitation.png" alt="Drinks Invitation — Tonight 21:00 at Štefanova 1" /&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;h1&gt;RSVP for Tonight — 21:00 </span><span class="s2">🍹</span><span class="s1">&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p class="lead"&gt;Štefanova 1 • Good music · Good chaos&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!-- Progressive-enhancement Formspree form --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;form id="rsvpForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- Hidden event context (will be sent to Formspree) --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;input type="hidden" name="event" value="Drinks with Friends" /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;input type="hidden" name="time" value="Tonight 21:00" /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;input type="hidden" name="location" value="Štefanova 1" /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;input type="hidden" name="attendance" id="attendance" value="" /&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- Honeypot (bots fill this) --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" /&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="grid"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;label for="name"&gt;Name&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;input id="name" name="name" type="text" placeholder="Ana Novak" /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;label for="email"&gt;Email (for confirmation)&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;input id="email" name="email" type="email" placeholder="ana@email.com" required /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="full"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;label for="message"&gt;Note (optional)&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;textarea id="message" name="message" placeholder="Bringing a friend / food preference / etc."&gt;&lt;/textarea&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="buttons"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;button type="button" class="btn in" onclick="setRSVP('Yes')"&gt;</span><span class="s2">🍾</span><span class="s1"> I’m In!&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;button type="button" class="btn out" onclick="setRSVP('No')"&gt;</span><span class="s2">🙅</span><span class="s1"> Can’t Make It&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;button type="submit" class="btn" style="margin-left:auto;"&gt;Submit RSVP&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="note"&gt;Tip: tap a button (“I’m In” or “Can’t Make It”) then hit “Submit RSVP”.&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="success" class="success"&gt;</span><span class="s2">✅</span><span class="s1"> Thanks! Your RSVP is in. Check your email for a confirmation.&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="error" class="error"&gt;</span><span class="s2">⚠️</span><span class="s1"> Oops — something went wrong. Please try again or email me.&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- Optional: redirect if JavaScript is disabled --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;input type="hidden" name="_redirect" value="https://yourusername.github.io/drinks-invite/thanks.html" /&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/form&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const form = document.getElementById('rsvpForm');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const attendanceField = document.getElementById('attendance');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const ok = document.getElementById('success');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const err = document.getElementById('error');</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function setRSVP(val){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>attendanceField.value = val;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>// small visual feedback</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>ok.style.display = 'none'; err.style.display = 'none';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>form.addEventListener('submit', async (e) =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>// Ajax submit for nice UX; fallback is normal POST if this fails</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>e.preventDefault();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>ok.style.display = 'none'; err.style.display = 'none';</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if(!attendanceField.value){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>attendanceField.value = 'Yes'; // default to Yes if user didn’t press a button</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const data = new FormData(form);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>try{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const res = await fetch(form.action, {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>method: 'POST',</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>body: data,</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>headers: { 'Accept': 'application/json' }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (res.ok){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>form.reset();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>attendanceField.value = '';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>ok.style.display = 'block';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>window.scrollTo({ top: 0, behavior: 'smooth' });</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>throw new Error('Network response not ok');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} catch(e){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>err.style.display = 'block';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+  <div class="wrap">
+    <div class="card">
+      <!-- Your invitation image -->
+      <img class="invite-img" src="invitation.png" alt="Drinks Invitation — Tonight 21:00 at Štefanova 1" />
+
+      <h1>RSVP for Tonight — 21:00 🍹</h1>
+      <p class="lead">Štefanova 1 • Good music · Good chaos</p>
+
+      <!-- Progressive-enhancement Formspree form -->
+      <form id="rsvpForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <!-- Hidden event context (will be sent to Formspree) -->
+        <input type="hidden" name="event" value="Drinks with Friends" />
+        <input type="hidden" name="time" value="Tonight 21:00" />
+        <input type="hidden" name="location" value="Štefanova 1" />
+        <input type="hidden" name="attendance" id="attendance" value="" />
+
+        <!-- Honeypot (bots fill this) -->
+        <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+
+        <div class="grid">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Ana Novak" />
+          </div>
+          <div>
+            <label for="email">Email (for confirmation)</label>
+            <input id="email" name="email" type="email" placeholder="ana@email.com" required />
+          </div>
+          <div class="full">
+            <label for="message">Note (optional)</label>
+            <textarea id="message" name="message" placeholder="Bringing a friend / food preference / etc."></textarea>
+          </div>
+        </div>
+
+        <div class="buttons">
+          <button type="button" class="btn in" onclick="setRSVP('Yes')">🍾 I’m In!</button>
+          <button type="button" class="btn out" onclick="setRSVP('No')">🙅 Can’t Make It</button>
+          <button type="submit" class="btn" style="margin-left:auto;">Submit RSVP</button>
+        </div>
+
+        <div class="note">Tip: tap a button (“I’m In” or “Can’t Make It”) then hit “Submit RSVP”.</div>
+
+        <div id="success" class="success">✅ Thanks! Your RSVP is in. Check your email for a confirmation.</div>
+        <div id="error" class="error">⚠️ Oops — something went wrong. Please try again or email me.</div>
+
+        <!-- Optional: redirect if JavaScript is disabled -->
+        <input type="hidden" name="_redirect" value="https://yourusername.github.io/drinks-invite/thanks.html" />
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('rsvpForm');
+    const attendanceField = document.getElementById('attendance');
+    const ok = document.getElementById('success');
+    const err = document.getElementById('error');
+
+    function setRSVP(val){
+      attendanceField.value = val;
+      // small visual feedback
+      ok.style.display = 'none'; err.style.display = 'none';
+    }
+
+    form.addEventListener('submit', async (e) => {
+      // Ajax submit for nice UX; fallback is normal POST if this fails
+      e.preventDefault();
+      ok.style.display = 'none'; err.style.display = 'none';
+
+      if(!attendanceField.value){
+        attendanceField.value = 'Yes'; // default to Yes if user didn’t press a button
+      }
+
+      const data = new FormData(form);
+      try{
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok){
+          form.reset();
+          attendanceField.value = '';
+          ok.style.display = 'block';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          throw new Error('Network response not ok');
+        }
+      } catch(e){
+        err.style.display = 'block';
+      }
+    });
+  </script>
 </body>
 </html>
